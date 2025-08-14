@@ -40,6 +40,13 @@ Project approach: Keep code simple, minimal files, avoid complex architecture.
 - CV includes: contact info, professional summary, technical skills, projects, education, languages
 - All CV download links use proper download attributes for immediate file download
 
+### Navigation Profile Photo Update
+- Moved profile photo from hero section to navigation header
+- Profile photo now appears beside "Imad Rachid" name in navbar
+- Added responsive sizing for mobile devices (35px on mobile, 40px on desktop)
+- Removed large profile photo from hero section for cleaner design
+- Navigation logo now includes both photo and name with proper styling
+
 # System Architecture
 
 ## Frontend Architecture

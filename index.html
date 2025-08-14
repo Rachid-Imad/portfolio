@@ -100,10 +100,21 @@
         }
         
         .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
             font-size: 1.5rem;
             font-weight: 800;
             color: var(--primary-color);
             text-decoration: none;
+        }
+        
+        .logo-image {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid var(--primary-color);
+            object-fit: cover;
         }
         
         .nav-menu {
@@ -279,25 +290,7 @@
             transform: translateY(-2px);
         }
         
-        /* Profile Image */
-        .profile-image-container {
-            margin-bottom: 2rem;
-        }
-        
-        .profile-image {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            margin: 0 auto;
-            box-shadow: 0 10px 30px rgba(0, 122, 255, 0.2);
-            border: 4px solid var(--white);
-            animation: pulse 3s ease-in-out infinite;
-        }
-        
-        @keyframes pulse {
-            0%, 100% { box-shadow: 0 10px 30px rgba(0, 122, 255, 0.2); }
-            50% { box-shadow: 0 15px 40px rgba(0, 122, 255, 0.3); }
-        }
+
         
         /* Section Styles */
         .section {
@@ -706,6 +699,15 @@
                 display: block;
             }
             
+            .logo {
+                font-size: 1.2rem;
+            }
+            
+            .logo-image {
+                width: 35px;
+                height: 35px;
+            }
+            
             .hero h1 {
                 font-size: 2.5rem;
             }
@@ -781,7 +783,10 @@
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="#home" class="logo">Imad Rachid</a>
+            <a href="#home" class="logo">
+                <img src="https://i.ibb.co/9JvGL8S/profile.jpg" alt="Imad Rachid" class="logo-image">
+                Imad Rachid
+            </a>
             <ul class="nav-menu">
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
@@ -798,9 +803,6 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <div class="profile-image-container">
-                <img src="https://i.ibb.co/9JvGL8S/profile.jpg" alt="Imad Rachid" class="profile-image">
-            </div>
             <div class="hero-subtitle">Turning Ideas Into</div>
             <h1>Digital Solutions</h1>
             <p class="hero-description">Full Stack Web Developer crafting modern, scalable applications with React, Laravel, MongoDB, and Python</p>
