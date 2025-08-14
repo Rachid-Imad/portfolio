@@ -47,6 +47,13 @@ Project approach: Keep code simple, minimal files, avoid complex architecture.
 - Removed large profile photo from hero section for cleaner design
 - Navigation logo now includes both photo and name with proper styling
 
+### Email Address Update
+- Updated email address from imad.rachid@gmail.com to imad.rachid.dev@gmail.com
+- Updated email in contact section, about section social links, and footer
+- Updated contact form mailto functionality
+- Regenerated CV PDF with correct email address
+- All email links throughout site now use the new professional email address
+
 # System Architecture
 
 ## Frontend Architecture
