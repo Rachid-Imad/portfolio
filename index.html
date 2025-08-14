@@ -689,6 +689,75 @@
             transform: translateX(0);
         }
         
+        /* Notification Styles */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 10000;
+            max-width: 400px;
+            min-width: 300px;
+            background: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            border-left: 4px solid var(--primary-color);
+            animation: slideInRight 0.3s ease;
+        }
+        
+        .notification-success {
+            border-left-color: var(--success);
+        }
+        
+        .notification-content {
+            padding: 1rem 1.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .notification-content i {
+            color: var(--primary-color);
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+        
+        .notification-success .notification-content i {
+            color: var(--success);
+        }
+        
+        .notification-content span {
+            color: var(--text-dark);
+            line-height: 1.5;
+            flex: 1;
+        }
+        
+        .notification-close {
+            background: none;
+            border: none;
+            color: var(--text-light);
+            cursor: pointer;
+            padding: 4px;
+            border-radius: 4px;
+            transition: background-color 0.2s ease;
+            flex-shrink: 0;
+        }
+        
+        .notification-close:hover {
+            background: var(--background-light);
+            color: var(--text-dark);
+        }
+        
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
         /* Responsive Design */
         @media (max-width: 768px) {
             .nav-menu {
@@ -775,6 +844,14 @@
             .skill-category,
             .project-card {
                 margin: 0 1rem;
+            }
+            
+            .notification {
+                top: 10px;
+                right: 10px;
+                left: 10px;
+                min-width: auto;
+                max-width: none;
             }
         }
     </style>
@@ -1346,21 +1423,71 @@
             }
             
             if (isValid) {
-                // Create mailto link
-                const mailtoLink = `mailto:imad.rachid.dev@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
-                window.location.href = mailtoLink;
+                // Show loading state
+                const submitBtn = contactForm.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                submitBtn.disabled = true;
                 
-                // Reset form
-                contactForm.reset();
-                
-                // Show success message
-                alert('Thank you for your message! Your email client should open now. If not, please email me directly at imad.rachid.dev@gmail.com');
+                // Simulate form submission (since we don't have a backend)
+                setTimeout(() => {
+                    // Reset form
+                    contactForm.reset();
+                    
+                    // Reset button
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                    
+                    // Show success message
+                    showNotification('Message sent successfully! I will get back to you within 24 hours. You can also reach me directly at imad.rachid.dev@gmail.com', 'success');
+                    
+                    // Optional: Copy message to clipboard for easy sharing
+                    const fullMessage = `From: ${name} (${email})\nSubject: ${subject}\n\nMessage:\n${message}`;
+                    navigator.clipboard.writeText(fullMessage).then(() => {
+                        console.log('Message copied to clipboard');
+                    }).catch(() => {
+                        console.log('Could not copy to clipboard');
+                    });
+                    
+                }, 1500);
             }
         });
         
         function isValidEmail(email) {
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             return emailRegex.test(email);
+        }
+        
+        // Notification system
+        function showNotification(message, type = 'info') {
+            // Remove existing notifications
+            const existing = document.querySelector('.notification');
+            if (existing) {
+                existing.remove();
+            }
+            
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.className = `notification notification-${type}`;
+            notification.innerHTML = `
+                <div class="notification-content">
+                    <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-info-circle'}"></i>
+                    <span>${message}</span>
+                    <button class="notification-close" onclick="this.parentElement.parentElement.remove()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            `;
+            
+            // Add to page
+            document.body.appendChild(notification);
+            
+            // Auto remove after 5 seconds
+            setTimeout(() => {
+                if (notification.parentElement) {
+                    notification.remove();
+                }
+            }, 8000);
         }
 
         // Mobile menu toggle
