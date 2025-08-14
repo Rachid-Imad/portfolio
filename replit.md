@@ -5,6 +5,16 @@ This is a personal portfolio website for Imad Rachid, a Full Stack Web Developer
 # User Preferences
 
 Preferred communication style: Simple, everyday language.
+Project approach: Keep code simple, minimal files, avoid complex architecture.
+
+# Recent Updates
+
+## August 14, 2025
+- Updated profile image to use provided image link: https://i.ibb.co/9JvGL8S/profile.jpg
+- Fixed LinkedIn URL to proper format: https://www.linkedin.com/in/imad-rachid
+- Updated email contact to: imad.rachid@gmail.com with clickable mailto link
+- Updated CV download links to placeholder Google Drive format
+- Made email clickable in contact section with proper styling
 
 # System Architecture
 
