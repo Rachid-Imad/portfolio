@@ -11,10 +11,13 @@ Project approach: Keep code simple, minimal files, avoid complex architecture.
 
 ## August 14, 2025
 - Updated profile image to use provided image link: https://i.ibb.co/9JvGL8S/profile.jpg
-- Fixed LinkedIn URL to proper format: https://www.linkedin.com/in/imad-rachid
+- Fixed LinkedIn URL to correct profile: https://www.linkedin.com/in/imad-rachid-2224b5340/
+- Updated GitHub URL to correct username: https://github.com/Rachid-Imad
 - Updated email contact to: imad.rachid@gmail.com with clickable mailto link
 - Updated CV download links to placeholder Google Drive format
 - Made email clickable in contact section with proper styling
+- Updated GitHub API endpoint to fetch from correct username
+- Fixed all social media links throughout the site (hero, about, footer sections)
 
 # System Architecture
 
