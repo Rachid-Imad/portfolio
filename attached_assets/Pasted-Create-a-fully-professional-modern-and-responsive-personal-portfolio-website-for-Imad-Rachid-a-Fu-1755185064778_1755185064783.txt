@@ -1,0 +1,107 @@
+Create a fully professional, modern, and responsive personal portfolio website for Imad Rachid, a Full Stack Web Developer. The design should be sleek and minimalistic with a black-and-white base theme and professional accent colors (electric blue, neon green, or gold) for buttons, links, and hover effects. The site must be optimized for desktop, tablet, and mobile.
+
+Sections & Features to Include
+1. Navigation Bar
+
+Fixed at the top, clean design with smooth scrolling.
+
+Links: Home, About, Skills, Projects, Experience, Education, Contact.
+
+Hover effects in the accent color.
+
+2. Hero Section
+
+Full-screen layout with:
+
+Profile image: Profile Image Link (display in a circular frame with subtle shadow).
+
+Animated typing text: “Hi, I’m Imad Rachid — Full Stack Web Developer | React | Laravel | MongoDB | Python”.
+
+Two CTA Buttons:
+
+“View My GitHub” → GitHub Link
+
+“Download My CV” → CV Link
+
+Background: Black with subtle abstract geometric patterns in the accent color.
+
+3. About Section
+
+Title: “About Me”
+
+Short professional bio based on CV:
+“I am a passionate Full Stack Web Developer with expertise in React, Laravel, MongoDB, Python, and modern web technologies. Skilled in both frontend and backend development, I create innovative, scalable, and user-friendly solutions. My projects reflect strong problem-solving skills, attention to detail, and dedication to delivering high-quality work.”
+
+Include social icons for GitHub and LinkedIn (LinkedIn Link).
+
+4. Skills Section
+
+Display skills from CV in categories:
+
+Frontend: HTML, CSS, JavaScript, React, Bootstrap.
+
+Backend: Laravel, PHP, Python, Node.js.
+
+Databases: MySQL, MongoDB.
+
+Tools: Git, GitHub, VS Code.
+
+Use progress bars or animated skill percentage indicators.
+
+5. Projects Section
+
+Automatically fetch and display latest repositories from GitHub using the GitHub API (GitHub Link).
+
+Each project card should include:
+
+Project title
+
+Short description (from repo)
+
+Tech stack badges
+
+“View on GitHub” button
+
+Responsive card layout.
+
+6. Experience Section
+
+Based on CV:
+
+Include positions, dates, and main responsibilities.
+
+Use timeline format for a modern feel.
+
+7. Education Section
+
+From CV:
+
+Include diplomas, certifications, and relevant training.
+
+Present in clean timeline style.
+
+8. Contact Section
+
+Contact form with name, email, message fields.
+
+Styled submit button with hover effect.
+
+Include email link and location.
+
+9. Footer
+
+Minimalistic footer with copyright.
+
+Quick links to GitHub, LinkedIn, and CV.
+
+Technical Notes:
+
+Fully responsive design (mobile-first).
+
+Smooth scroll animations.
+
+Accent color effects for interactivity.
+
+SEO-friendly meta tags (include “Full Stack Web Developer”, “React”, “Laravel”, “Portfolio”).
+
+Lightweight animations for section reveals.
