@@ -1450,8 +1450,13 @@
                         message: message
                     })
                 })
-                .then(response => response.json())
+                .then(response => {
+                    console.log('Response status:', response.status);
+                    return response.json();
+                })
                 .then(data => {
+                    console.log('Server response:', data);
+                    
                     // Reset button
                     submitBtn.innerHTML = originalText;
                     submitBtn.disabled = false;
@@ -1460,8 +1465,8 @@
                         // Reset form
                         contactForm.reset();
                         
-                        // Show success message
-                        showNotification(data.message, 'success');
+                        // Show success message with additional info
+                        showNotification(data.message + ' Check your email inbox (and spam folder) in the next few minutes!', 'success');
                     } else {
                         // Show error message
                         showNotification(data.error || 'Failed to send message. Please try again.', 'error');

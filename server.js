@@ -21,10 +21,12 @@ app.get('/', (req, res) => {
 // Handle contact form submission
 app.post('/send-email', async (req, res) => {
     try {
+        console.log('📧 Received email request:', req.body);
         const { name, email, subject, message } = req.body;
         
         // Validate input
         if (!name || !email || !subject || !message) {
+            console.log('❌ Validation failed: Missing fields');
             return res.status(400).json({ 
                 success: false, 
                 error: 'All fields are required' 
@@ -86,7 +88,9 @@ This message was sent from your portfolio contact form.
         };
         
         // Send email
+        console.log('📤 Sending email to:', msg.to);
         await sgMail.send(msg);
+        console.log('✅ Email sent successfully!');
         
         res.json({ 
             success: true, 
