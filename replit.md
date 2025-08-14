@@ -32,6 +32,14 @@ Project approach: Keep code simple, minimal files, avoid complex architecture.
 - Updated GitHub API endpoint to fetch from correct username
 - Fixed all social media links throughout the site (hero, about, footer sections)
 
+### CV Download Feature Added
+- Created professional PDF CV file with complete profile information
+- Added download CV button in hero section (replacing "Get In Touch" button)
+- Added CV download link in footer navigation
+- Added CV download button in contact section for easy access
+- CV includes: contact info, professional summary, technical skills, projects, education, languages
+- All CV download links use proper download attributes for immediate file download
+
 # System Architecture
 
 ## Frontend Architecture
